@@ -8,7 +8,6 @@ pattern_timezone = '%a %b %d %H:%M:%S %Z %Y'
 match_time_zone = ""
 for i in timezone:
     if i in date_format_list:
-        print(i)
         match_time_zone = pattern_timezone.replace("%Z", i)
-print(match_time_zone)
 date_format = datetime.datetime.strptime(output, match_time_zone).strftime("%d/%m/%Y")
+print(date_format)
